@@ -60,7 +60,6 @@ ValueError with a clear message before the log is evaluated. I verified
 the corrected formula by hand against the Week 3 worked example
 (T0=600, T_inf=25, k=0.02, T_target=50 -> t=157.0 min) and against the
 Week 1 Example 1.4 result (t=157 min) before trusting the app's output.
-====================================================================================================================================
 
 AI TOOLS USED: Claude (Anthropic)
 
