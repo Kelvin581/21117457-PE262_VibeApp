@@ -33,5 +33,58 @@ used in this app.
 
 ## AI usage disclosure
 
-See the comment block at the top of `app.py` for the AI tool used, key
-prompts, and what was manually verified/corrected.
+==================================================================
+
+AI TOOLS USED: Claude (Anthropic)
+
+KEY PROMPTS USED (summarised — see project submission for full log):
+1. "Build a Streamlit app with two modes selectable via a sidebar radio:
+   (a) steady-state conduction through a flat wall using Fourier's Law,
+   (b) Newton's Law of Cooling time-to-target. Follow the Week 8.2 course
+   pattern: sidebar inputs, st.columns metrics, colour-coded status line,
+   one Matplotlib figure with st.pyplot(fig)."
+2. "For the conduction mode, add a two-panel chart: flux vs wall thickness
+   (sweeping L) and flux vs hot-side temperature (sweeping T_H), each
+   marking the current operating point with axvline."
+3. "Add input validation (k<=0, L<=0, T_target outside [T_inf, T0], etc.)
+   that shows st.warning() instead of crashing, matching the try/except
+   pattern used in Week 4 and Week 7 of the course."
+
+WHAT I HAD TO MANUALLY VERIFY / FIX:
+The cooling-time formula t = -ln((T_target - T_inf)/(T0 - T_inf)) / k only
+holds when T_inf < T_target < T0 (or the reverse order for heating). The
+first AI draft did not guard this and would silently return a negative or
+complex-valued nonsense time if T_target was entered outside that range
+(e.g. below ambient). I added an explicit range check that raises
+ValueError with a clear message before the log is evaluated. I verified
+the corrected formula by hand against the Week 3 worked example
+(T0=600, T_inf=25, k=0.02, T_target=50 -> t=157.0 min) and against the
+Week 1 Example 1.4 result (t=157 min) before trusting the app's output.
+====================================================================================================================================
+
+AI TOOLS USED: Claude (Anthropic)
+
+KEY PROMPTS USED (summarised — see project submission for full log):
+1. "Build a Streamlit app with two modes selectable via a sidebar radio:
+   (a) steady-state conduction through a flat wall using Fourier's Law,
+   (b) Newton's Law of Cooling time-to-target. Follow the Week 8.2 course
+   pattern: sidebar inputs, st.columns metrics, colour-coded status line,
+   one Matplotlib figure with st.pyplot(fig)."
+2. "For the conduction mode, add a two-panel chart: flux vs wall thickness
+   (sweeping L) and flux vs hot-side temperature (sweeping T_H), each
+   marking the current operating point with axvline."
+3. "Add input validation (k<=0, L<=0, T_target outside [T_inf, T0], etc.)
+   that shows st.warning() instead of crashing, matching the try/except
+   pattern used in Week 4 and Week 7 of the course."
+
+WHAT I HAD TO MANUALLY VERIFY / FIX:
+The cooling-time formula t = -ln((T_target - T_inf)/(T0 - T_inf)) / k only
+holds when T_inf < T_target < T0 (or the reverse order for heating). The
+first AI draft did not guard this and would silently return a negative or
+complex-valued nonsense time if T_target was entered outside that range
+(e.g. below ambient). I added an explicit range check that raises
+ValueError with a clear message before the log is evaluated. I verified
+the corrected formula by hand against the Week 3 worked example
+(T0=600, T_inf=25, k=0.02, T_target=50 -> t=157.0 min) and against the
+Week 1 Example 1.4 result (t=157 min) before trusting the app's output.
+==================================================================
