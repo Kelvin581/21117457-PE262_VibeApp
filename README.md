@@ -50,7 +50,7 @@ KEY PROMPTS USED (summarised — see project submission for full log):
    that shows st.warning() instead of crashing, matching the try/except
    pattern used in Week 4 and Week 7 of the course."
 
-WHAT I HAD TO MANUALLY VERIFY / FIX:
+ ## WHAT I HAD TO MANUALLY VERIFY / FIX:
 The cooling-time formula t = -ln((T_target - T_inf)/(T0 - T_inf)) / k only
 holds when T_inf < T_target < T0 (or the reverse order for heating). The
 first AI draft did not guard this and would silently return a negative or
@@ -76,7 +76,8 @@ KEY PROMPTS USED (summarised — see project submission for full log):
    that shows st.warning() instead of crashing, matching the try/except
    pattern used in Week 4 and Week 7 of the course."
 
-WHAT I HAD TO MANUALLY VERIFY / FIX:
+## WHAT I HAD TO MANUALLY VERIFY / FIX:
+
 The cooling-time formula t = -ln((T_target - T_inf)/(T0 - T_inf)) / k only
 holds when T_inf < T_target < T0 (or the reverse order for heating). The
 first AI draft did not guard this and would silently return a negative or
