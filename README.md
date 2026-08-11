@@ -8,7 +8,7 @@ temperature, with a full cooling curve). Each mode has live sliders/inputs,
 metric cards, a colour-coded status line, a Matplotlib chart, and a Pandas
 results table.
 
-**Live app:** _add your Streamlit Community Cloud URL here after deploying_
+**Live app:** <https://kelvin-eng-dash.streamlit.app/>
 
 ## Running locally
 
